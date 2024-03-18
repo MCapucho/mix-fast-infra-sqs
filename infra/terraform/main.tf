@@ -23,7 +23,7 @@ resource "aws_sqs_queue" "mixfast-sqs-queue-pagamento-aprovado" {
   sqs_managed_sse_enabled    = true
 }
 
-resource "aws_sqs_queue_policy" "sh_sqs_policy" {
+resource "aws_sqs_queue_policy" "mixfast-sqs-queue-pagamento-aprovado-policy" {
   queue_url = aws_sqs_queue.mixfast-sqs-queue-pagamento-aprovado.id
   policy    = data.aws_iam_policy_document.mixfast_sqs_policy.json
 }
@@ -38,7 +38,7 @@ resource "aws_sqs_queue" "mixfast-sqs-queue-pagamento-reprovado" {
   sqs_managed_sse_enabled    = true
 }
 
-resource "aws_sqs_queue_policy" "sh_sqs_policy" {
+resource "aws_sqs_queue_policy" "mixfast-sqs-queue-pagamento-reprovado-policy" {
   queue_url = aws_sqs_queue.mixfast-sqs-queue-pagamento-reprovado.id
   policy    = data.aws_iam_policy_document.mixfast_sqs_policy.json
 }
